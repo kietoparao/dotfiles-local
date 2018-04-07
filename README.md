@@ -10,11 +10,20 @@ Dotfiles uses [Dotbot](https://github.com/anishathalye/dotbot) for installation.
 When wanting to add more files of your local machine to be tracked by git, run the following commands from the ~/.dotfiles local repo:
 
 ```bash
-# Example adding the '~/.xprofile' file:
+# Example adding the '~/.xprofile' file
+
+# Add the following lines to the '- link' line in 'install.conf.yaml':
+- link:
+    ~/.xprofile: xprofile
+```
+
+```bash
 cd ~/.dotfiles
 mkdir -p xprofile
 rmdir xprofile
 mv ~/.xprofile xprofile
+
+# Run the dotbot script to create the symlink:
 ./install
 ```
 
@@ -32,6 +41,31 @@ Link exists ~/.config/i3status -> /home/xxxx/.dotfiles/config/i3status/
 All links have been set up
 
 ==> All tasks executed successfully
+```
+
+### Adding files in subdirectories
+
+When the *dotfile* you want to track is not in the $HOME (~) directory but is instead in some subdirectories from $HOME, the steps are a little different:
+
+```bash
+# Example adding the '~/.config/i3/' files
+
+# Add the following lines to the '- link' line in 'install.conf.yaml':
+- link:
+    ~/.xprofile: xprofile
+    ~/.config/i3:
+        path: config/i3/
+        create: true
+```
+
+```bash
+cd ~/.dotfiles
+mkdir -p config/i3/
+rmdir config/i3/
+mv ~/.config/i3 config/i3/
+
+# Run the dotbot script to create the symlink:
+./install
 ```
 
 ## Git actions
