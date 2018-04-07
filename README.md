@@ -74,7 +74,7 @@ mv ~/.config/i3 config/i3/
 
 The regular git way:
 ```bash
-git add -A
+git add -A    # or 'git add .'
 git commit -m 'Custom commit message'
 ```
 
@@ -90,7 +90,7 @@ git push -u origin master
 
 When the remote repo has been setup, you can push changes to it:
 ```bash
-git push origin master  # Or only 'git push'
+git push    # Or 'git push origin master'
 ```
 
 ## Useful links
