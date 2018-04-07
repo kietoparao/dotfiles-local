@@ -5,8 +5,10 @@
     ~/.bashrc: bashrc
     ~/.bash_logout: bash_logout
     ~/.Xresources: Xresources
+    ~/.gnupg/gpg.conf: gpg.conf
     ~/.config/i3:
         path: config/i3/
         create: true
-
-
+    ~/.config/i3status:
+        path: config/i3status/
+        create: true
