@@ -55,3 +55,14 @@ When the remote repo has been setup, you can push changes to it:
 ```bash
 git push origin master  # Or only 'git push'
 ```
+
+## Useful links
+
+* [The best way to store your dotfiles: A bare Git repository](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
+
+* [Managing Your Dotfiles](https://www.anishathalye.com/2014/08/03/managing-your-dotfiles/)
+
+* [Init Dotfiles (dotbot helper)](https://github.com/Vaelatern/init-dotfiles)
+
+* [Using machine-specific configs](https://github.com/anishathalye/dotbot/pull/11#issuecomment-73082152)
+
