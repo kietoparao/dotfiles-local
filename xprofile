@@ -1,0 +1,5 @@
+#Background
+~/.fehbg &
+
+# Set the default Editor:
+export EDITOR=nano
