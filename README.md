@@ -4,9 +4,10 @@ After cloning this repo, run `install` to automatically set up the development e
 
 Dotfiles uses [Dotbot](https://github.com/anishathalye/dotbot) for installation.
 
-## Adding more files to this system
 
-When wanting to add more files of your local machine to be tracked by git, run the following from the ~/.dotfiles local repo:
+### Adding more files to this system
+
+When wanting to add more files of your local machine to be tracked by git, run the following commands from the ~/.dotfiles local repo:
 
 ```bash
 # Example adding the '~/.xprofile' file:
@@ -33,7 +34,9 @@ All links have been set up
 ==> All tasks executed successfully
 ```
 
-## Adding and commiting changes
+## Git actions
+
+### Adding and commiting changes
 
 The regular git way:
 ```bash
@@ -41,7 +44,7 @@ git add -A
 git commit -m 'Custom commit message'
 ```
 
-## Setting up remote repo as origin
+### Setting up remote repo as origin
 
 This remote github repo has been populated from the local machine using the following commands:
 ```bash
@@ -49,7 +52,7 @@ git remote add origin https://github.com/kietoparao/dotfiles.git
 git push -u origin master
 ```
 
-## Saving changes remotely
+### Saving changes remotely
 
 When the remote repo has been setup, you can push changes to it:
 ```bash
