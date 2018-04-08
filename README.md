@@ -20,8 +20,8 @@ git remote add origin https://github.com/kietoparao/dotfiles-local.git
 
 # Then, for the 'main' branch:
 git checkout -b main    # Creating and moving to 'main' branch from 'master' branch
-git branch -u origin/main   # set remote upstream tracking to new 'main' branch
 git push origin main
+git branch -u origin/main   # set remote upstream tracking to new 'main' branch
 
 # For the 'portable' branch:
 git checkout -b portable
