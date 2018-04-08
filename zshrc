@@ -108,3 +108,48 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 # ====================================================================
+
+#GENERAL SHORTCUTS
+alias systate="echo; lsblk ; echo; df -h; echo"
+alias diff="diff --color=auto"
+alias grep="grep --color=auto"
+alias ptpb="curl -F c=@- https://ptpb.pw/"
+alias hgrep="history | grep"
+
+#EDIT AND RELOAD .zshrc CONFIG
+alias zshrc="nano ~/.zshrc && source ~/.zshrc"
+
+#PACMAN SHORTCUTS
+alias pacup="sudo reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syyu" #updates pacman after ranking mirrors
+alias pacinfo="pacman -Si" #shows info about a specific package
+alias pacinst="sudo pacman -S" #installs a package
+alias pacrem="sudo pacman -Rs" #Removes a package and its dependencies which are not required by any other installed package
+alias paclist="sudo pacman -Qqet" #Lists all packages explicitly installed and not required as dependencies
+alias paccache="paccache -r" #remove old package cache files except for the latest three package versions
+alias pacorph="pacman -Qdt" # lists orphaned packages
+alias aurlist="pacman -Qm" #List AUR installed packages
+alias pacedit="sudo nano /etc/pacman.conf" #edit pacman config file to enable/disable repos
+
+#FSTAB
+alias fstab="sudo nano /etc/fstab" #edits fstab file
+
+#PING ONLY THREE TIMES
+alias ping="ping -c 3"
+
+#ACCESS OSMC
+alias osmc="ssh osmc@192.168.1.133"
+alias mntosmc="sshfs osmc@192.168.1.133:/ ~/OSMC_remote/" #Mounts remote / into local OSMC folder
+alias umntosmc="fusermount -u ~/OSMC_remote/" #Unmounts remote OSMC folder
+
+# VIDEO CAPTURE (SCREENCASTING)
+# You can change the values -video_size and -framerate to lose some quality on the video file.
+alias videocapture="ffmpeg -f x11grab -video_size 1280x1024 -framerate 60 -i $DISPLAY -f alsa -i default -c:v ffvhuff -c:a flac test.mkv"
+
+# NETWORK USING b43
+alias rwifi="sudo systemctl restart wpa_supplicant@wlp3s0b1.service"
+alias stopwifi="sudo systemctl stop wpa_supplicant@wlp3s0b1.service"
+alias startwifi="sudo systemctl start wpa_supplicant@wlp3s0b1.service"
+
+# NETWORK
+alias ethoff="sudo ip link set enp2s0f0 down"
+alias wifioff="sudo ip link set wlp3s0 down"
