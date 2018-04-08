@@ -26,9 +26,9 @@ git remote add origin https://github.com/kietoparao/dotfiles-local.git
 # Creating new branch 'portable' in 'dotfiles-local' repo:
 git checkout -b portable
 
-# Change the upstream branch you’re tracking (from 'master' to 'portable'):
-git branch -u origin/portable
-
 # Pushing changes from local to remote new 'portable' branch:
 git push origin portable    # or 'git push'
+
+# Change the upstream branch you’re tracking (from 'master' to 'portable'):
+git branch -u origin/portable
 ```
