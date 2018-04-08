@@ -11,12 +11,12 @@ PS1='[\u@\h \W]\$ '
 #-------------------------------------------------------------------------------------
 
 # ENABLE VIRTUALENV-WRAPPER https://flexion.org/posts/2012-12-python-and-virtualenv-on-archlinux-and-ubuntu/
-export WORKON_HOME=${HOME}/Snakepit-virtualenv
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-elif [ -f /usr/bin/virtualenvwrapper.sh ]; then
-    source /usr/bin/virtualenvwrapper.sh
-fi
+#export WORKON_HOME=${HOME}/Snakepit-virtualenv
+#if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+#    source /usr/local/bin/virtualenvwrapper.sh
+#elif [ -f /usr/bin/virtualenvwrapper.sh ]; then
+#    source /usr/bin/virtualenvwrapper.sh
+#fi
 
 #DEVTOOLS CHROOT
 #https://wiki.archlinux.org/index.php/DeveloperWiki:Building_in_a_Clean_Chroot
@@ -87,7 +87,8 @@ alias videocapture="ffmpeg -f x11grab -video_size 1280x1024 -framerate 60 -i $DI
 
 
 #===============================================================================
-# completion file for bash
+# pass completion file for bash
+# https://git.zx2c4.com/password-store/tree/src/completion/pass.bash-completion
 #===============================================================================
 
 # Copyright (C) 2012 - 2014 Jason A. Donenfeld <Jason@zx2c4.com> and

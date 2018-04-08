@@ -4,6 +4,7 @@
     ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
     ~/.bash_logout: bash_logout
+    ~/.zshrc: zshrc
     ~/.Xresources: Xresources
     ~/.xprofile: xprofile
     ~/.gnupg/gpg.conf: gpg.conf

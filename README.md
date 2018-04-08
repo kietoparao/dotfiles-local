@@ -19,8 +19,10 @@ When wanting to add more files of your local machine to be tracked by git, run t
 
 ```bash
 cd ~/.dotfiles
+# These two next steps can be omitted:
 mkdir -p xprofile
 rmdir xprofile
+
 mv ~/.xprofile xprofile
 
 # Run the dotbot script to create the symlink:
@@ -60,8 +62,10 @@ When the *dotfile* you want to track is not in the $HOME (~) directory but is in
 
 ```bash
 cd ~/.dotfiles
-mkdir -p config/i3/
+# These two next steps can be omitted:
+mkdir -p config/i3/ 
 rmdir config/i3/
+
 mv ~/.config/i3 config/i3/
 
 # Run the dotbot script to create the symlink:
