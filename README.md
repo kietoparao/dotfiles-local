@@ -8,6 +8,8 @@ Further instructions are in [dotfiles personal repo](https://github.com/kietopar
 
 ### Saving changes to different branches
 
+<https://help.github.com/articles/pushing-to-a-remote/>
+
 You can push changes when working in different branches (*main*, *portable*, *tiny*, etc.) doing the following:
 
 ```bash
