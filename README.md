@@ -17,11 +17,13 @@ You can push changes when working in different branches (*main*, *portable*, *ti
 git remote -v
 
 # Then, for the 'main' branch:
-git checkout main    # making sure you're on 'main' branch
+git checkout -b main    # making sure you're on 'main' branch
+git branch -u origin/main   # set remote upstream tracking to new 'main' branch
 git push origin main
 
 # For the 'portable' branch:
-git checkout portable
+git checkout -b portable
+git branch -u origin/portable
 git push origin portable
 
 # And so on...
