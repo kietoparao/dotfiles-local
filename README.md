@@ -12,9 +12,13 @@ Also used the [init_dotfiles.sh](https://github.com/Vaelatern/init-dotfiles) scr
 
 ```bash
 cd ~
+
+
+# Creating the ~/.dotfiles dotbot git repo: 
 curl -fsSLO https://raw.githubusercontent.com/Vaelatern/init-dotfiles/master/init_dotfiles.sh
 ./init_dotfiles.sh
 
+# Entering the newly created repo:
 cd ~/.dotfiles
 
 # Adding the remote repo to track:
