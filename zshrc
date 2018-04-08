@@ -119,8 +119,6 @@ alias hgrep='history | grep --color=auto'
 alias zshrc='$EDITOR ~/.zshrc && source ~/.zshrc'
 
 #PACMAN SHORTCUTS
-#alias pacfresh="sudo reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist" #https://wiki.archlinux.org/index.php/Reflector
-#alias pacfresh="sudo ~/Scripts/armrr/armrr" #Arch Linux script that downloads a pacman ranked mirrorlist by selected country.
 alias pacup="sudo reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syyu"     # ranks mirrors and updates pacman
 alias pacinfo="pacman -Si" #shows info about a specific package
 alias pacinst="sudo pacman -S" #installs a package
