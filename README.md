@@ -17,7 +17,7 @@ You can push changes when working in different branches (*main*, *portable*, *ti
 git remote -v
 
 # Then, for the 'main' branch:
-git checkout -b main    # making sure you're on 'main' branch
+git checkout -b main    # Creating and moving to 'main' branch
 git branch -u origin/main   # set remote upstream tracking to new 'main' branch
 git push origin main
 
