@@ -152,5 +152,6 @@ alias videocapture="ffmpeg -f x11grab -video_size 1280x1024 -framerate 60 -i $DI
 # ============================================================================
 # PASS COMPLETION
 # https://git.zx2c4.com/password-store/tree/src/completion/pass.zsh-completion
-# ============================================================================
 
+# (Not needed in zsh for now, completion seems to work already).
+# ============================================================================
