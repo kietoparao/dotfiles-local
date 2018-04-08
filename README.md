@@ -13,13 +13,15 @@ Further instructions are in [dotfiles personal repo](https://github.com/kietopar
 You can push changes when working in different branches (*main*, *portable*, *tiny*, etc.) doing the following:
 
 ```bash
-# If origin=https://github.com/kietoparao/dotfiles-local.git:
+# Checking if origin=https://github.com/kietoparao/dotfiles-local.git:
 git remote -v
 
 # Then, for the 'main' branch:
+git checkout main    # making sure you're on 'main' branch
 git push origin main
 
 # For the 'portable' branch:
+git checkout portable
 git push origin portable
 
 # And so on...
