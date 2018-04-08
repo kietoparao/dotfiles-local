@@ -26,9 +26,9 @@ git remote add origin https://github.com/kietoparao/dotfiles-local.git
 # Creating new branch 'main' in 'dotfiles-local' repo:
 git checkout -b main
 
-# Change the upstream branch you’re tracking (from 'master' to 'main'):
-git branch -u origin/main
-
 # Pushing changes from local to remote new 'portable' branch:
 git push origin main    # or 'git push' (also works)
+
+# Change the upstream branch you’re tracking (from 'master' to 'main'):
+git branch -u origin/main
 ```
