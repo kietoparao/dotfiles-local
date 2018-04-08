@@ -15,6 +15,8 @@ You can push changes when working in different branches (*main*, *portable*, *ti
 ```bash
 # Checking if origin=https://github.com/kietoparao/dotfiles-local.git:
 git remote -v
+# If not, you have to add the remote repo for tracking:
+git remote add origin https://github.com/kietoparao/dotfiles-local.git
 
 # Then, for the 'main' branch:
 git checkout -b main    # Creating and moving to 'main' branch from 'master' branch
