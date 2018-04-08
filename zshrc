@@ -27,7 +27,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=7
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -49,7 +49,7 @@ ZSH_THEME="robbyrussell"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -116,6 +116,7 @@ alias systate="echo; lsblk ; echo; df -h; echo"
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias hgrep='history | grep --color=auto'
+alias zshrc='$EDITOR ~/.zshrc && source ~/.zshrc'
 
 #PACMAN SHORTCUTS
 #alias pacfresh="sudo reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist" #https://wiki.archlinux.org/index.php/Reflector
