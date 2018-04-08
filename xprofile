@@ -1,0 +1,8 @@
+#Background
+~/.fehbg &
+
+# Set the default Editor:
+export EDITOR=nano
+
+# Special key bindings for MBP (brigthness, volume, etc)
+xbindkeys

@@ -7,8 +7,12 @@
     ~/.conkyrc: conkyrc
     ~/.zshrc: zshrc
     ~/.Xresources: Xresources
+    ~/.xprofile: xprofile
+    ~/.gnupg/gpg.conf: gpg.conf
     ~/.config/i3:
         path: config/i3/
         create: true
-
+    ~/.config/i3status:
+        path: config/i3status/
+        create: true
 
