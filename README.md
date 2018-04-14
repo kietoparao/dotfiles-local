@@ -1,8 +1,8 @@
-# Dotfiles-portable
+# Dotfiles-netbook
 
 Dotfiles uses [Dotbot](https://github.com/anishathalye/dotbot) for installation.
 
-Config files for *portable* branch.
+Config files for *netbook* branch.
 
 ## Setup from remote dotfiles-local repo
 
@@ -23,12 +23,12 @@ cd ~/.dotfiles
 # Adding the remote repo to track:
 git remote add origin https://github.com/kietoparao/dotfiles-local.git
 
-# Creating new branch 'portable' in 'dotfiles-local' repo:
-git checkout -b portable
+# Creating new branch 'netbook' in 'dotfiles-local' repo:
+git checkout -b netbook
 
-# Pushing changes from local to remote new 'portable' branch:
-git push origin portable    # or 'git push'
+# Pushing changes from local to remote new 'netbook' branch:
+git push origin netbook    # or 'git push'
 
-# Change the upstream branch you’re tracking (from 'master' to 'portable'):
-git branch -u origin/portable
+# Change the upstream branch you’re tracking (from 'master' to 'netbook'):
+git branch -u origin/netbook
 ```
