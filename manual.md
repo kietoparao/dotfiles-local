@@ -180,10 +180,12 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 ### 3.9. mysql
 
-The setup on the `main` machine has been the following:
+The setup on the `main` machine (2018-04-15) has been the following:
 
 ```bash
+# Installing package
 sudo pacman -S mysql
+# Setup
 sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 ```
 
