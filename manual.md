@@ -1,12 +1,12 @@
 # General manual
 
-## Reinstall dotfiles in new machine
+## 1. Reinstall dotfiles in new machine
 
 Go to <https://github.com/kietoparao/dotfiles-local>.
 
-## Security
+## 2. Security
 
-### Deny ssh root access
+### 2.1. Deny ssh root access
 
 <https://wiki.archlinux.org/index.php/Secure_Shell#Deny>
 
@@ -15,15 +15,15 @@ Add the following to /etc/ssh/sshd_config:
 PermitRootLogin no
 ```
 
-### (TODO)
+### 2.2. (TODO)
 
 <https://wiki.archlinux.org/index.php/Secure_Shell#Force_public_key_authentication>
 
-### TCP/IP stack hardening (TODO)
+### 2.3. TCP/IP stack hardening (TODO)
 
 <https://wiki.archlinux.org/index.php/Sysctl#TCP.2FIP_stack_hardening>
 
-### Unlock locked user
+### 2.4. Unlock locked user
 
 Unlock a user that's locked after X failed login attempts:
 
@@ -34,7 +34,7 @@ usermod -U some_user #from root user
 The lock feature has been edited in /etc/pam.d/system-login: 
 <https://wiki.archlinux.org/index.php/Security#Lockout_user_after_three_failed_login_attempts>
 
-### Lock/unlock *root* user
+### 2.5. Lock/unlock *root* user
 
 ```bash
 # Lock:
@@ -43,7 +43,7 @@ sudo passwd -l root
 sudo passwd -u root
 ```
 
-### Firewall UFW
+### 2.6. Firewall UFW
 
 <https://wiki.archlinux.org/index.php/Uncomplicated_Firewall>
 
@@ -53,28 +53,28 @@ Check status with:
 ufw status
 ```
 
-### iptables
+### 2.7. iptables
 
 File is in `/etc/iptables/iptables.rules`. Check steps done with `history | grep iptables`.
 
-### MAC apparmor (TODO)
+### 2.8. MAC apparmor (TODO)
 
 <https://wiki.archlinux.org/index.php/Security#Mandatory_access_control>
 
-### GRUB (TODO)
+### 2.9. GRUB (TODO)
 
 <https://wiki.archlinux.org/index.php/GRUB/Tips_and_tricks#Password_protection_of_GRUB_menu>
 
-### GNUPG
+### 2.10. GNUPG
 
 Add the following line to ~/.gnupg/gpg.conf, in order to avoid failed signatures checks when compiling AUR packages:
 ```bash
 keyserver-options auto-key-retrieve
 ```
 
-## Misc.
+## 3. Misc.
 
-### Volume
+### 3.1. Volume
 
 ```bash
 # Unmute:
@@ -83,7 +83,7 @@ amixer sset Master unmute
 amixer sset 'Master' 100%
 ```
 
-### Clamav antivirus
+### 3.2. Clamav antivirus
 
 Initial config:
 
@@ -98,7 +98,7 @@ clamscan myfile
 clamscan -r -i /home #same as --recursive --infected
 ```
 
-### Fix fsck bootloader error
+### 3.3. Fix fsck bootloader error
 
 Avoid the following message:
 ```
@@ -108,7 +108,7 @@ Add the "rw" before "root=[...]" line in /boot/grub/grub.cfg in Ubuntu partition
 
 Solution: <https://bbs.archlinux.org/viewtopic.php?id=167153>
 
-### Background image
+### 3.4. Background image
 
 Added `~/.fehbg &` to ~/.xprofile to autostart on login. If you want to change the background image, modify .fehbg file in home folder, or run:
 
@@ -116,7 +116,7 @@ Added `~/.fehbg &` to ~/.xprofile to autostart on login. If you want to change t
 feh --bg-scale /path/to/image.png
 ```
 
-### Mail
+### 3.5. Mail
 
 Installed Postfix to use mail on console (13/07/2017). Followed this guide:
 <https://www.howtoforge.com/tutorial/configure-postfix-to-use-gmail-as-a-mail-relay/#-configure-gmail-authentication>
@@ -125,7 +125,7 @@ Mail password from ra\*\*\*\*\*au@gmail.com at `/etc/postfix/sasl_passwd`.
 
 Config at `/etc/postfix/main.cf`.
 
-### i3 config
+### 3.6. i3 config
 
 Modify the i3 config file, key bindings and so on...
 
@@ -141,7 +141,7 @@ cp /etc/i3status.conf .config/i3status/config
 nano .config/i3status/config
 ```
 
-### Music
+### 3.7. Music
 
 Install picard (graphical) and/or [beets](https://beets.readthedocs.io/en/v1.4.6/) (console), both working with musicbrainz website:
 
@@ -149,7 +149,7 @@ Install picard (graphical) and/or [beets](https://beets.readthedocs.io/en/v1.4.6
 sudo pacman -S beet picard
 ```
 
-### Shell
+### 3.8. Shell
 
 Changing between shells (bash and zsh):
 <https://wiki.archlinux.org/index.php/Command-line_shell#Changing_your_default_shell>
