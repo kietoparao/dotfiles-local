@@ -100,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=20000
-setopt appendhistory autocd
+setopt appendhistory autocd HIST_IGNORE_SPACE
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
