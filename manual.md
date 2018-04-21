@@ -192,7 +192,6 @@ sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 Output:
 
 ```
-
 To start mysqld at boot time you have to copy
 support-files/mysql.server to the right place for your system
 
