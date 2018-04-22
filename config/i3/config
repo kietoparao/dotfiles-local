@@ -188,6 +188,8 @@ for_window [instance=xcalc] floating toggle
 exec dropbox
 exec urxvt
 exec clementine
+# Start i3lock after 3 minutes of inactivity
+exec xautolock -time 1 -locker 'i3lock -i Pictures/Wallpapers/res_1680x1050/pokemon.png' &
 
 # Automatically start clients on specific workspaces
 # Assign Firefox to workspace 1
