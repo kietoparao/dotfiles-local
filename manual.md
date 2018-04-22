@@ -225,3 +225,17 @@ http://dev.mysql.com
 Consider joining MariaDB's strong and vibrant community:
 https://mariadb.org/get-involved/
 ```
+
+### 3.10. Rename pictures with exiv2
+
+Rename all pictures that start with `IMG_` with the formatted timestamp:
+
+```bash
+exiv2 -tFv -r %Y-%m-%d_%H%M%S IMG_*
+```
+
+Example of output:
+```bash
+File 001/755: IMG_31122014_223643.jpg
+Renaming file to ./2014-12-31_223643.jpg, updating timestamp
+```
