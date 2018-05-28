@@ -146,9 +146,9 @@ alias umntosmc="fusermount -u ~/OSMC_remote/" #Unmounts remote OSMC folder
 alias videocapture="ffmpeg -f x11grab -video_size 1280x1024 -framerate 60 -i $DISPLAY -f alsa -i default -c:v ffvhuff -c:a flac test.mkv"
 
 # NETWORK USING b43
-alias rwifi="sudo systemctl restart wpa_supplicant@wlp3s0b1.service"
-alias stopwifi="sudo systemctl stop wpa_supplicant@wlp3s0b1.service"
-alias startwifi="sudo systemctl start wpa_supplicant@wlp3s0b1.service"
+alias rwifi="sudo systemctl restart wpa_supplicant@wlp3s0.service"
+alias stopwifi="sudo systemctl stop wpa_supplicant@wlp3s0.service"
+alias startwifi="sudo systemctl start wpa_supplicant@wlp3s0.service"
 
 # NETWORK
 alias ethoff="sudo ip link set enp2s0f0 down"
