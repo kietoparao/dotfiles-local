@@ -130,7 +130,7 @@ configure to set boot instructions for rEFInd.
 
 ### 2.8. Password Manager
 
-#### 2.8.1. First steps
+#### 2.8.1. Set up on server and 1st client
 
 Install `pass` package on Arch repo. Guide from 
 <https://lists.zx2c4.com/pipermail/password-store/2015-January/001331.html>.
@@ -138,7 +138,7 @@ Install `pass` package on Arch repo. Guide from
 Bare git repo created in `osmc@192.168.1.133:/home/osmc/git/contrasenyes`. 
 We will use this bare git repo to `git push` to it from the local machine.
 
-On the server machine:
+**On the server machine**:
 
 ```bash
 cd ~
@@ -146,25 +146,39 @@ mkdir git
 mkdir git/contrasenyes
 cd git/contrasenyes
 git init --bare
+
+# Export the private gpg key (if you don't have any, you first have to 
+# generate a gpg key pair) to import it to every client you want to set up
+gpg --export-secret-keys > private.key
 ```
 
-On the local machine:
+**On the 1st local machine (client)**:
 
 ```bash
-# Find your gpgID with "gpg --list-secret-keys" and copy it here (if there is
-# nothing, you first have to create a gpg key pair)
+# Import server private gpg key (previously copied to the machine)
+gpg --import private.key
+
+# Find the imported gpgID...
+gpg --list-secret-keys
+
+# ... and copy it here
 pass init [gpgID]
+
+# Initialize passwordstore git repo
 pass git init
 
-# Tell git where is the bare repo in the server and push to initialize everything
+# Tell git where is the bare (empty) repo in the server
 pass git remote add origin ssh://osmc@192.168.1.133:/home/osmc/git/contrasenyes
-cd ~/.password-store
 
-# If you want to push everything from local to the remote, to initialize it
+# Generate a test
+pass generate AAA/test 12
+
+# Push everything from local to the remote, to fill up the remote bare repo
+cd ~/.password-store
 git push --set-upstream origin master
 ```
 
-Set up a git hook that runs every time there is a new commit. This hook
+**Set up a git hook** that runs every time there is a new commit. This hook
 first fetches any changes we don't have locally, then rebases our recent
 local commit on top of those changes, then sends it all back to the server.
 
@@ -172,10 +186,58 @@ local commit on top of those changes, then sends it all back to the server.
 echo git pull --rebase > .password-store/.git/hooks/post-commit
 echo git push >> .password-store/.git/hooks/post-commit
 chmod u+x .password-store/.git/hooks/post-commit
-
-# Export the private gpg key from the git repo (remote server)
-gpg --export-secret-keys > private.key
 ```
+
+#### 2.8.2. Add more clients (FIX IT)
+
+Guide from <https://lists.zx2c4.com/pipermail/password-store/2015-January/001357.html>.
+
+If you want to add more than 1 client to use the `pass` repo, you have to run 
+the following steps:
+
+```bash
+# Import gpg private key (previously exported from server or from the 1st client)
+gpg --import private.key
+# Find the imported gpgID...
+gpg --list-secret-keys
+# ... and copy it here
+pass init [gpgID]
+# Initialize passwordstore git repo
+pass git init
+# Add the remote origin
+pass git remote add origin ssh://osmc@192.168.1.133:/home/osmc/git/contrasenyes
+# Set remote server as upstream tracking reference
+pass git push --set-upstream origin master
+# Retrieve every password in remote server
+pass git pull --rebase origin master
+# Add the post-commit git hook
+echo git pull --rebase > .password-store/.git/hooks/post-commit
+echo git push >> .password-store/.git/hooks/post-commit
+chmod u+x .password-store/.git/hooks/post-commit
+```
+
+**Note**: if you the following error 
+<https://superuser.com/questions/1297502/gpg2-unusable-public-key-no-assurance-key-belongs-to-named-user>:
+
+```
+There is no assurance this key belongs to the named user
+[stdin]: encryption failed: Unusable public key
+```
+
+It means that the gpg private key you have imported is not trusted. To fix that:
+
+```bash
+gpg --edit-key [gpgID]
+# In gpg shell type the following
+trust
+# Set trust to value '5'=ultimate
+5
+# Go back to bash shell
+quit
+```
+
+
+#### 2.8.3. Add an Android client
 
 Import the `private.key` file into Openkeychain app on the phone or into another 
 machine by copying the `private.key` file into it and running 
@@ -187,23 +249,7 @@ Install on the phone the app "Android Password Store"
 
 Setup the server config, and all set!
 
-#### 2.8.2. Add a new machine
-
-If your pass repo is already configured and running on the remote server, and 
-you want to access to it from a new machine, you have to run the following steps:
-
-```bash
-# Import gpg private key from the server (or from another machine that is already
-# set up with pass repo)
-gpg --import private.key
-
-# Add the remote origin
-pass git remote add origin ssh://osmc@192.168.1.133:/home/osmc/git/contrasenyes
-
-cd .
-```
-
-#### 2.8.3. Usage
+#### 2.8.4. Usage
 
 ```bash
 # Show all the saved passwords
