@@ -130,10 +130,10 @@ configure to set boot instructions for rEFInd.
 
 ### 2.8. Password Manager
 
-Install "pass" package on Arch repo. Guide from 
-<https://lists.zx2c4.com/pipermail/password-store/2015-January/001331.html>
+Install `pass` package on Arch repo. Guide from 
+<https://lists.zx2c4.com/pipermail/password-store/2015-January/001331.html>.
 
-Bare git repo created in `osmc@192.168.1.133:/home/osmc/git/contrasenyes`
+Bare git repo created in `osmc@192.168.1.133:/home/osmc/git/contrasenyes`. 
 We will use this bare git repo to `git push` to it from the local machine.
 
 On the server machine:
