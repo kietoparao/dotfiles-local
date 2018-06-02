@@ -95,7 +95,7 @@ File is in `/etc/iptables/iptables.rules`. Check steps done with `history | grep
 
 <https://wiki.archlinux.org/index.php/Security#Mandatory_access_control>
 
-### 2.7. Bootloaders (TODO)
+### 2.7. Bootloaders
 
 #### 2.7.1. GRUB
 
