@@ -1,4 +1,15 @@
+\newpage
+
 # General manual
+
+Generated PDF with the following commands:
+
+```bash
+# Include table of contents with depth 4, and 1 inch margin
+pandoc manual.md -o manual.pdf --toc --toc-depth=4 -V geometry:margin=1in
+```
+
+\newpage
 
 ## 1. Reinstall dotfiles in new machine
 
@@ -71,6 +82,18 @@ Add the following line to ~/.gnupg/gpg.conf, in order to avoid failed signatures
 ```bash
 keyserver-options auto-key-retrieve
 ```
+
+To list gpg keys:
+
+```bash
+# List all keys
+gpg --list-keys
+
+# List only private keys
+gpg --list-secret-keys
+```
+
+\newpage
 
 ## 3. Misc.
 
@@ -239,3 +262,75 @@ Example of output:
 File 001/755: IMG_31122014_223643.jpg
 Renaming file to ./2014-12-31_223643.jpg, updating timestamp
 ```
+
+### 3.11. passwordstore
+
+Install "pass" package on Arch repo. Guide from 
+<https://lists.zx2c4.com/pipermail/password-store/2015-January/001331.html>
+
+Bare git repo created in `osmc@192.168.1.133:/home/osmc/git/contrasenyes`
+We will use this bare git repo to `git push` to it from the local machine.
+
+On the server machine:
+
+```bash
+cd ~
+mkdir git
+mkdir git/contrasenyes
+cd git/contrasenyes
+git init --bare
+```
+
+On the local machine:
+
+```bash
+# Find your gpgID with "gpg --list-secret-keys" and copy it here
+pass init [gpgID]
+pass git init
+
+# Tell git where is the bare repo in the server and push to initialize everything
+pass git remote add origin ssh://osmc@192.168.1.133:~/git/contrasenyes
+cd ~/.password-store
+git push --set-upstream origin master
+```
+
+Set up a git hook that runs every time there is a new commit. This hook
+first fetches any changes we don't have locally, then rebases our recent
+local commit on top of those changes, then sends it all back to the server.
+
+```bash
+echo git pull --rebase > .password-store/.git/hooks/post-commit
+echo git push >> .password-store/.git/hooks/post-commit
+chmod u+x .password-store/.git/hooks/post-commit
+
+# Export the private gpg key from the git repo (remote server raspberry)
+gpg --export-secret-keys > private.key
+```
+
+Import the `private.key` file into Openkeychain app on the phone. After that, 
+you will be able to decrypt and view the passwords pulled from the git repo.
+
+Install on the phone the app "Android Password Store" 
+(<https://github.com/zeapo/Android-Password-Store#readme>)
+
+Setup the server config, and all set!
+
+#### Usage
+
+```bash
+# Show all the saved passwords
+pass
+
+# Write a new password with multiline support
+pass insert -m Dir/subdir/username
+
+# Edit a password
+pass edit Dir/subdir/username
+
+# Remove a password
+pass rm Dir/subdir/username
+
+# Generate a new password of N length of characters
+pass generate Dir/subdir/username N
+```
+

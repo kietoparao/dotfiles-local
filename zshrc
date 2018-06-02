@@ -148,6 +148,9 @@ alias MBPoff="fusermount -u ~/MacbookPro/"
 # You can change the values -video_size and -framerate to lose some quality on the video file.
 alias videocapture="ffmpeg -f x11grab -video_size 1280x1024 -framerate 60 -i $DISPLAY -f alsa -i default -c:v ffvhuff -c:a flac test.mkv"
 
+# PASTEBINS
+alias ptpb='curl -F c=@- https://ptpb.pw/'
+
 # ============================================================================
 # PASS COMPLETION
 # https://git.zx2c4.com/password-store/tree/src/completion/pass.zsh-completion
