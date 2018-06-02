@@ -188,7 +188,7 @@ echo git push >> .password-store/.git/hooks/post-commit
 chmod u+x .password-store/.git/hooks/post-commit
 ```
 
-#### 2.8.2. Add more clients (FIX IT)
+#### 2.8.2. Add more clients
 
 Guide from <https://lists.zx2c4.com/pipermail/password-store/2015-January/001357.html>.
 
@@ -236,7 +236,6 @@ trust
 quit
 ```
 
-
 #### 2.8.3. Add an Android client
 
 Import the `private.key` file into Openkeychain app on the phone or into another 
@@ -255,7 +254,10 @@ Setup the server config, and all set!
 # Show all the saved passwords
 pass
 
-# Write a new password with multiline support
+# Generate a new password of N length of characters
+pass generate Dir/subdir/username N
+
+# Generate a custom new password with multiline support
 pass insert -m Dir/subdir/username
 
 # Edit a password
@@ -264,8 +266,6 @@ pass edit Dir/subdir/username
 # Remove a password
 pass rm Dir/subdir/username
 
-# Generate a new password of N length of characters
-pass generate Dir/subdir/username N
 ```
 
 \newpage
