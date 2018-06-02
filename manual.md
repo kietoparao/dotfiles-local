@@ -44,7 +44,6 @@ To list gpg keys:
 ```bash
 # List all keys
 gpg --list-keys
-
 # List only private keys
 gpg --list-secret-keys
 ```
@@ -60,7 +59,8 @@ gpg --list-secret-keys
 Unlock a user that's locked after X failed login attempts:
 
 ```bash
-usermod -U some_user #from root user
+# Run the following from root user
+usermod -U some_user 
 ```
 
 The lock feature has been edited in /etc/pam.d/system-login: 
@@ -69,9 +69,9 @@ The lock feature has been edited in /etc/pam.d/system-login:
 #### 2.4.2. Lock/unlock *root* user
 
 ```bash
-# Lock:
+# Lock
 sudo passwd -l root
-# Unlock:
+# Unlock
 sudo passwd -u root
 ```
 
@@ -114,7 +114,6 @@ Download rEFInd from <http://www.rodsbooks.com/refind/> (e.g.
 ```bash
 # After extracting the zip file, enter the directory
 cd refind-bin-0.11.2/
-
 # Execute refind-install script from the Mac
 ./refind-install
 ```
@@ -142,11 +141,12 @@ We will use this bare git repo to `git push` to it from the local machine.
 
 ```bash
 cd ~
+# Create the password folder
 mkdir git
 mkdir git/contrasenyes
 cd git/contrasenyes
+# Initialize on password folder a bare git repository
 git init --bare
-
 # Export the private gpg key (if you don't have any, you first have to 
 # generate a gpg key pair) to import it to every client you want to set up
 gpg --export-secret-keys > private.key
@@ -157,25 +157,18 @@ gpg --export-secret-keys > private.key
 ```bash
 # Import server private gpg key (previously copied to the machine)
 gpg --import private.key
-
 # Find the imported gpgID...
 gpg --list-secret-keys
-
 # ... and copy it here
 pass init [gpgID]
-
 # Initialize passwordstore git repo
 pass git init
-
 # Tell git where is the bare (empty) repo in the server
 pass git remote add origin ssh://osmc@192.168.1.133:/home/osmc/git/contrasenyes
-
 # Generate a test
 pass generate AAA/test 12
-
 # Push everything from local to the remote, to fill up the remote bare repo
-cd ~/.password-store
-git push --set-upstream origin master
+pass git push --set-upstream origin master
 ```
 
 **Set up a git hook** that runs every time there is a new commit. This hook
@@ -183,9 +176,9 @@ first fetches any changes we don't have locally, then rebases our recent
 local commit on top of those changes, then sends it all back to the server.
 
 ```bash
-echo git pull --rebase > .password-store/.git/hooks/post-commit
-echo git push >> .password-store/.git/hooks/post-commit
-chmod u+x .password-store/.git/hooks/post-commit
+echo git pull --rebase > ~/.password-store/.git/hooks/post-commit
+echo git push >> ~/.password-store/.git/hooks/post-commit
+chmod u+x ~/.password-store/.git/hooks/post-commit
 ```
 
 #### 2.8.2. Add more clients
@@ -253,19 +246,14 @@ Setup the server config, and all set!
 ```bash
 # Show all the saved passwords
 pass
-
 # Generate a new password of N length of characters
 pass generate Dir/subdir/username N
-
 # Generate a custom new password with multiline support
 pass insert -m Dir/subdir/username
-
 # Edit a password
 pass edit Dir/subdir/username
-
 # Remove a password
 pass rm Dir/subdir/username
-
 ```
 
 \newpage
@@ -359,13 +347,10 @@ Changing between shells (bash and zsh):
 ```bash
 # Listing available shells:
 chsh -l
-
 # From /bin/bash shell environment, change to zsh:
 chsh -s /bin/zsh
-
 # From bash shell, use zsh shell:
 zsh
-
 # From zsh shell, use bash shell:
 bash
 ```
@@ -437,7 +422,8 @@ exiv2 -tFv -r %Y-%m-%d_%H%M%S IMG_*
 ```
 
 Example of output:
-```bash
+
+```
 File 001/755: IMG_31122014_223643.jpg
 Renaming file to ./2014-12-31_223643.jpg, updating timestamp
 ```
