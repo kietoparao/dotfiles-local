@@ -17,7 +17,9 @@ Go to <https://github.com/kietoparao/dotfiles-local>.
 
 ## 2. Security
 
-### 2.1. Deny ssh root access
+### 2.1. SSH
+
+#### 2.1.1. Deny ssh root access
 
 <https://wiki.archlinux.org/index.php/Secure_Shell#Deny>
 
@@ -26,57 +28,11 @@ Add the following to /etc/ssh/sshd_config:
 PermitRootLogin no
 ```
 
-### 2.2. (TODO)
+#### 2.1.2. Disable Password Authentication (TODO)
 
 <https://wiki.archlinux.org/index.php/Secure_Shell#Force_public_key_authentication>
 
-### 2.3. TCP/IP stack hardening (TODO)
-
-<https://wiki.archlinux.org/index.php/Sysctl#TCP.2FIP_stack_hardening>
-
-### 2.4. Unlock locked user
-
-Unlock a user that's locked after X failed login attempts:
-
-```bash
-usermod -U some_user #from root user
-```
-
-The lock feature has been edited in /etc/pam.d/system-login: 
-<https://wiki.archlinux.org/index.php/Security#Lockout_user_after_three_failed_login_attempts>
-
-### 2.5. Lock/unlock *root* user
-
-```bash
-# Lock:
-sudo passwd -l root
-# Unlock:
-sudo passwd -u root
-```
-
-### 2.6. Firewall UFW
-
-<https://wiki.archlinux.org/index.php/Uncomplicated_Firewall>
-
-Check status with:
-
-```bash
-ufw status
-```
-
-### 2.7. iptables
-
-File is in `/etc/iptables/iptables.rules`. Check steps done with `history | grep iptables`.
-
-### 2.8. MAC apparmor (TODO)
-
-<https://wiki.archlinux.org/index.php/Security#Mandatory_access_control>
-
-### 2.9. GRUB (TODO)
-
-<https://wiki.archlinux.org/index.php/GRUB/Tips_and_tricks#Password_protection_of_GRUB_menu>
-
-### 2.10. GNUPG
+### 2.2. GnuPG
 
 Add the following line to ~/.gnupg/gpg.conf, in order to avoid failed signatures checks when compiling AUR packages:
 ```bash
@@ -91,6 +47,156 @@ gpg --list-keys
 
 # List only private keys
 gpg --list-secret-keys
+```
+
+### 2.3. TCP/IP stack hardening (TODO)
+
+<https://wiki.archlinux.org/index.php/Sysctl#TCP.2FIP_stack_hardening>
+
+### 2.4. Lock/unlock users
+
+#### 2.4.1. Unlock locked user
+
+Unlock a user that's locked after X failed login attempts:
+
+```bash
+usermod -U some_user #from root user
+```
+
+The lock feature has been edited in /etc/pam.d/system-login: 
+<https://wiki.archlinux.org/index.php/Security#Lockout_user_after_three_failed_login_attempts>
+
+#### 2.4.2. Lock/unlock *root* user
+
+```bash
+# Lock:
+sudo passwd -l root
+# Unlock:
+sudo passwd -u root
+```
+
+### 2.5. Firewalls
+
+#### 2.5.1. UFW
+
+<https://wiki.archlinux.org/index.php/Uncomplicated_Firewall>
+
+Check status with:
+
+```bash
+ufw status
+```
+
+#### 2.5.2. iptables
+
+File is in `/etc/iptables/iptables.rules`. Check steps done with `history | grep iptables`.
+
+### 2.6. MAC apparmor (TODO)
+
+<https://wiki.archlinux.org/index.php/Security#Mandatory_access_control>
+
+### 2.7. Bootloaders (TODO)
+
+#### 2.7.1. GRUB
+
+<https://wiki.archlinux.org/index.php/GRUB/Tips_and_tricks#Password_protection_of_GRUB_menu>
+
+#### 2.7.2. EFI
+
+Guides from:
+
+* <https://wiki.archlinux.org/index.php/EFI_System_Partition>
+* <https://wiki.archlinux.org/index.php/REFInd>
+
+Download rEFInd from <http://www.rodsbooks.com/refind/> (e.g. 
+<http://sourceforge.net/projects/refind/files/0.11.2/refind-bin-0.11.2.zip/download>).
+
+```bash
+# After extracting the zip file, enter the directory
+cd refind-bin-0.11.2/
+
+# Execute refind-install script from the Mac
+./refind-install
+```
+
+Basically, the ESP is located under `/boot/efi` on Linux, and under `/Volumes/ESP` 
+on a Mac.
+
+After rEFInd installation, try to boot into Linux with the Archiso by mounting 
+the linux partition (`mount /dev/sda5 /mnt`), `arch-chroot /mnt` into it and 
+running the `mkrlconf` script that can also be found on `refind-bin-0.11.2/` 
+directory. This will generate a `refind-linux.conf` under `/boot`, that you can 
+configure to set boot instructions for rEFInd.
+
+### 2.8. Password Manager
+
+Install "pass" package on Arch repo. Guide from 
+<https://lists.zx2c4.com/pipermail/password-store/2015-January/001331.html>
+
+Bare git repo created in `osmc@192.168.1.133:/home/osmc/git/contrasenyes`
+We will use this bare git repo to `git push` to it from the local machine.
+
+On the server machine:
+
+```bash
+cd ~
+mkdir git
+mkdir git/contrasenyes
+cd git/contrasenyes
+git init --bare
+```
+
+On the local machine:
+
+```bash
+# Find your gpgID with "gpg --list-secret-keys" and copy it here
+pass init [gpgID]
+pass git init
+
+# Tell git where is the bare repo in the server and push to initialize everything
+pass git remote add origin ssh://osmc@192.168.1.133:~/git/contrasenyes
+cd ~/.password-store
+git push --set-upstream origin master
+```
+
+Set up a git hook that runs every time there is a new commit. This hook
+first fetches any changes we don't have locally, then rebases our recent
+local commit on top of those changes, then sends it all back to the server.
+
+```bash
+echo git pull --rebase > .password-store/.git/hooks/post-commit
+echo git push >> .password-store/.git/hooks/post-commit
+chmod u+x .password-store/.git/hooks/post-commit
+
+# Export the private gpg key from the git repo (remote server raspberry)
+gpg --export-secret-keys > private.key
+```
+
+Import the `private.key` file into Openkeychain app on the phone. After that, 
+you will be able to decrypt and view the passwords pulled from the git repo.
+
+Install on the phone the app "Android Password Store" 
+(<https://github.com/zeapo/Android-Password-Store#readme>)
+
+Setup the server config, and all set!
+
+#### Usage
+
+```bash
+# Show all the saved passwords
+pass
+
+# Write a new password with multiline support
+pass insert -m Dir/subdir/username
+
+# Edit a password
+pass edit Dir/subdir/username
+
+# Remove a password
+pass rm Dir/subdir/username
+
+# Generate a new password of N length of characters
+pass generate Dir/subdir/username N
 ```
 
 \newpage
@@ -124,12 +230,16 @@ clamscan -r -i /home #same as --recursive --infected
 ### 3.3. Fix fsck bootloader error
 
 Avoid the following message:
+
 ```
 The root device is not configured read-write! It may be fscked again later!
 Add the "rw" before "root=[...]" line in /boot/grub/grub.cfg in Ubuntu partition
 ```
 
 Solution: <https://bbs.archlinux.org/viewtopic.php?id=167153>
+
+In EFI systems, the solution will be a bit different: you need to set the `rw` 
+option in the `/boot/refind-linux.conf`.
 
 ### 3.4. Background image
 
@@ -201,7 +311,7 @@ Install with (it does everything for you):
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-### 3.9. mysql
+### 3.9. MySQL
 
 The setup on the `main` machine (2018-04-15) has been the following:
 
@@ -261,76 +371,5 @@ Example of output:
 ```bash
 File 001/755: IMG_31122014_223643.jpg
 Renaming file to ./2014-12-31_223643.jpg, updating timestamp
-```
-
-### 3.11. passwordstore
-
-Install "pass" package on Arch repo. Guide from 
-<https://lists.zx2c4.com/pipermail/password-store/2015-January/001331.html>
-
-Bare git repo created in `osmc@192.168.1.133:/home/osmc/git/contrasenyes`
-We will use this bare git repo to `git push` to it from the local machine.
-
-On the server machine:
-
-```bash
-cd ~
-mkdir git
-mkdir git/contrasenyes
-cd git/contrasenyes
-git init --bare
-```
-
-On the local machine:
-
-```bash
-# Find your gpgID with "gpg --list-secret-keys" and copy it here
-pass init [gpgID]
-pass git init
-
-# Tell git where is the bare repo in the server and push to initialize everything
-pass git remote add origin ssh://osmc@192.168.1.133:~/git/contrasenyes
-cd ~/.password-store
-git push --set-upstream origin master
-```
-
-Set up a git hook that runs every time there is a new commit. This hook
-first fetches any changes we don't have locally, then rebases our recent
-local commit on top of those changes, then sends it all back to the server.
-
-```bash
-echo git pull --rebase > .password-store/.git/hooks/post-commit
-echo git push >> .password-store/.git/hooks/post-commit
-chmod u+x .password-store/.git/hooks/post-commit
-
-# Export the private gpg key from the git repo (remote server raspberry)
-gpg --export-secret-keys > private.key
-```
-
-Import the `private.key` file into Openkeychain app on the phone. After that, 
-you will be able to decrypt and view the passwords pulled from the git repo.
-
-Install on the phone the app "Android Password Store" 
-(<https://github.com/zeapo/Android-Password-Store#readme>)
-
-Setup the server config, and all set!
-
-#### Usage
-
-```bash
-# Show all the saved passwords
-pass
-
-# Write a new password with multiline support
-pass insert -m Dir/subdir/username
-
-# Edit a password
-pass edit Dir/subdir/username
-
-# Remove a password
-pass rm Dir/subdir/username
-
-# Generate a new password of N length of characters
-pass generate Dir/subdir/username N
 ```
 
