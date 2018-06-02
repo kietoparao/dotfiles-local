@@ -135,15 +135,6 @@ alias fstab="sudo nano /etc/fstab" #edits fstab file
 #PING ONLY THREE TIMES
 alias ping="ping -c 3"
 
-#ACCESS OSMC
-alias osmc="ssh osmc@192.168.1.133"
-alias mntosmc="sshfs osmc@192.168.1.133:/ ~/OSMC_remote/" #Mounts remote / into local OSMC folder
-alias umntosmc="fusermount -u ~/OSMC_remote/" #Unmounts remote OSMC folder
-
-#ACCESS MACBOOK PRO
-alias MBPssh="sshfs arnau@192.168.1.36:/ ~/MacbookPro/"    #Mounts remote / macbook folder into local MacbookPro folder
-alias MBPoff="fusermount -u ~/MacbookPro/"
-
 # VIDEO CAPTURE (SCREENCASTING)
 # You can change the values -video_size and -framerate to lose some quality on the video file.
 alias videocapture="ffmpeg -f x11grab -video_size 1280x1024 -framerate 60 -i $DISPLAY -f alsa -i default -c:v ffvhuff -c:a flac test.mkv"
