@@ -130,6 +130,8 @@ configure to set boot instructions for rEFInd.
 
 ### 2.8. Password Manager
 
+#### 2.8.1. First steps
+
 Install `pass` package on Arch repo. Guide from 
 <https://lists.zx2c4.com/pipermail/password-store/2015-January/001331.html>.
 
@@ -149,13 +151,16 @@ git init --bare
 On the local machine:
 
 ```bash
-# Find your gpgID with "gpg --list-secret-keys" and copy it here
+# Find your gpgID with "gpg --list-secret-keys" and copy it here (if there is
+# nothing, you first have to create a gpg key pair)
 pass init [gpgID]
 pass git init
 
 # Tell git where is the bare repo in the server and push to initialize everything
-pass git remote add origin ssh://osmc@192.168.1.133:~/git/contrasenyes
+pass git remote add origin ssh://osmc@192.168.1.133:/home/osmc/git/contrasenyes
 cd ~/.password-store
+
+# If you want to push everything from local to the remote, to initialize it
 git push --set-upstream origin master
 ```
 
@@ -168,19 +173,37 @@ echo git pull --rebase > .password-store/.git/hooks/post-commit
 echo git push >> .password-store/.git/hooks/post-commit
 chmod u+x .password-store/.git/hooks/post-commit
 
-# Export the private gpg key from the git repo (remote server raspberry)
+# Export the private gpg key from the git repo (remote server)
 gpg --export-secret-keys > private.key
 ```
 
-Import the `private.key` file into Openkeychain app on the phone. After that, 
-you will be able to decrypt and view the passwords pulled from the git repo.
+Import the `private.key` file into Openkeychain app on the phone or into another 
+machine by copying the `private.key` file into it and running 
+`gpg --import private.key`. After that, you will be able to decrypt and view the 
+passwords pulled from the git repo.
 
 Install on the phone the app "Android Password Store" 
 (<https://github.com/zeapo/Android-Password-Store#readme>)
 
 Setup the server config, and all set!
 
-#### Usage
+#### 2.8.2. Add a new machine
+
+If your pass repo is already configured and running on the remote server, and 
+you want to access to it from a new machine, you have to run the following steps:
+
+```bash
+# Import gpg private key from the server (or from another machine that is already
+# set up with pass repo)
+gpg --import private.key
+
+# Add the remote origin
+pass git remote add origin ssh://osmc@192.168.1.133:/home/osmc/git/contrasenyes
+
+cd .
+```
+
+#### 2.8.3. Usage
 
 ```bash
 # Show all the saved passwords
