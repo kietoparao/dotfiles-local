@@ -5,10 +5,11 @@
     ~/.bashrc: bashrc
     ~/.bash_logout: bash_logout
     ~/.conkyrc: conkyrc
-    ~/.zshrc: zshrc
+    ~/.gnupg/gpg.conf: gpg.conf
+    ~/.vimrc: vimrc
     ~/.Xresources: Xresources
     ~/.xprofile: xprofile
-    ~/.gnupg/gpg.conf: gpg.conf
+    ~/.zshrc: zshrc
     ~/.config/i3:
         path: config/i3/
         create: true
