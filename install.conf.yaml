@@ -4,9 +4,10 @@
     ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
     ~/.bash_logout: bash_logout
-    ~/.zshrc: zshrc
+    ~/.vimrc: vimrc
     ~/.Xresources: Xresources
     ~/.xprofile: xprofile
+    ~/.zshrc: zshrc
     ~/.gnupg/gpg.conf: gpg.conf
     ~/.config/i3:
         path: config/i3/
