@@ -16,6 +16,10 @@ echo "====================" >> $file
 echo " sudo lsblk output:" >> $file
 echo "====================" >> $file
 sudo lsblk >> $file
+echo "====================" >> $file
+echo "sudo cat /etc/fstab output:" >> $file
+echo "====================" >> $file
+sudo cat /etc/fstab >> $file
 echo "===> Finished."
 echo "File $file generated."
 
