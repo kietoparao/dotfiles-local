@@ -18,3 +18,5 @@ echo "====================" >> $file
 sudo lsblk >> $file
 echo "===> Finished."
 echo "File $file generated."
+
+# More info on http://www.brendangregg.com/Perf/linux_perf_tools_full.png
