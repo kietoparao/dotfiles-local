@@ -1,6 +1,9 @@
 #!/bin/sh
+# Before running this script, install inxi[aur]
+# and mesa-demos packages.
 file=computer_report.txt
-echo "====================" > $file
+date > $file
+echo "====================" >> $file
 echo "sudo inxi -b output:" >> $file
 echo "====================" >> $file
 sudo inxi -b >> $file
