@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/piranski/.oh-my-zsh
+  export ZSH=/home/kieto/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -99,12 +99,12 @@ source $ZSH/oh-my-zsh.sh
 # ---------------------------------------
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
-SAVEHIST=20000
+SAVEHIST=50000
 setopt appendhistory autocd HIST_IGNORE_SPACE
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/piranski/.zshrc'
+zstyle :compinstall filename '/home/kieto/.zshrc'
 
 autoload -Uz compinit
 compinit

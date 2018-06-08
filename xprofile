@@ -2,4 +2,4 @@
 ~/.fehbg &
 
 # Set the default Editor:
-export EDITOR=nano
+export EDITOR=vim
