@@ -202,7 +202,7 @@ exec dropbox
 exec urxvt
 exec clementine
 # Start i3lock after 2 minutes of inactivity
-exec xautolock -time 2 -locker 'i3lock -f -i Pictures/Wallpapers/lockscreen/lock1.png' &
+#exec xautolock -time 2 -locker 'i3lock -f -i Pictures/Wallpapers/lockscreen/lock1.png' &
 
 # Automatically start clients on specific workspaces
 # Assign Firefox to workspace 1
