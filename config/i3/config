@@ -193,7 +193,7 @@ bar {
 # SHORTCUTS TO APPLICATIONS
 bindsym $mod+F1 exec firefox
 bindsym $mod+F2 exec xcalc
-bindsym $mod+F3 exec pcmanfm
+bindsym $mod+F3 exec nemo
 bindsym $mod+F4 exec clementine
 bindsym $mod+F5 exec catfish #search tool
 bindsym $mod+F6 exec xcalib -i -a #invert screen colors
@@ -213,7 +213,7 @@ assign [class="Firefox"] $ws1
 # Assign URxvt terminals to workspace 2
 assign [class="URxvt"] $ws2
 # Assign File manager to workspace 3
-assign [class="Pcmanfm"] $ws3
+assign [class="Nemo"] $ws3
 # Assign Clementine to workspace 4
 assign [class="Clementine"] $ws4
 # Assign Gimp to workspace $w5
