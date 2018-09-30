@@ -201,6 +201,7 @@ for_window [instance=xcalc] floating toggle
 exec dropbox
 exec urxvt
 exec clementine
+exec redshift-gtk
 # Start i3lock after 2 minutes of inactivity
 #exec xautolock -time 2 -locker 'i3lock -f -i Pictures/Wallpapers/lockscreen/lock1.png' &
 
