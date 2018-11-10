@@ -220,3 +220,6 @@ _pass()
 
 complete -o filenames -F _pass pass
 
+
+# added by Miniconda3 installer
+export PATH="/home/kieto/miniconda3/bin:$PATH"

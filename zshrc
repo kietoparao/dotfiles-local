@@ -143,9 +143,6 @@ alias videocapture="ffmpeg -f x11grab -video_size 1280x1024 -framerate 60 -i $DI
 # PASTEBINS
 alias ptpb='curl -F c=@- https://ptpb.pw/'
 
-# ============================================================================
-# PASS COMPLETION
-# https://git.zx2c4.com/password-store/tree/src/completion/pass.zsh-completion
-
-# (Not needed in zsh for now, completion seems to work already).
-# ============================================================================
+# Enable conda commands
+export PATH="$PATH:$HOME/miniconda3/bin"
+. /home/kieto/miniconda3/etc/profile.d/conda.sh
