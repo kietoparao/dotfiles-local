@@ -60,6 +60,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  history
   pass
   web-search
 )
@@ -116,7 +117,7 @@ compinit
 alias systate="echo; lsblk ; echo; df -h; echo"
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
-alias hgrep='history | grep --color=auto'
+#alias hgrep='history | grep --color=auto'
 alias zshrc='$EDITOR ~/.zshrc && source ~/.zshrc'
 
 #PACMAN SHORTCUTS
