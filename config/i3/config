@@ -172,7 +172,7 @@ bar {
 #	status_command $HOME/bin/conky-i3bar	
 #	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 #    	font pango:DejaVu Sans Mono 10
-	font pango:Inconsolata, FontAwesome 10
+	font pango:Inconsolata, FontAwesome 12
 	
 	#Position of the i3bar
 	#position top|bottom
