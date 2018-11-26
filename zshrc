@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/piranski/.oh-my-zsh
+  export ZSH=/home/arnau/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -59,7 +59,10 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  archlinux
   git
+  history
+  sudo
   web-search
 )
 
@@ -102,7 +105,7 @@ SAVEHIST=20000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/piranski/.zshrc'
+zstyle :compinstall filename '/home/arnau/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -114,7 +117,6 @@ alias systate="echo; lsblk ; echo; df -h; echo"
 alias diff="diff --color=auto"
 alias grep="grep --color=auto"
 alias ptpb="curl -F c=@- https://ptpb.pw/"
-alias hgrep="history | grep"
 
 #EDIT AND RELOAD .zshrc CONFIG
 alias zshrc="nano ~/.zshrc && source ~/.zshrc"
