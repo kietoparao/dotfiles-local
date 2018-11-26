@@ -46,6 +46,6 @@ URxvt.shading:       20
 !URxvt.letterSpace: 1
 
 ! INCONSOLATA FONT:
-URxvt.font: xft:inconsolata:size=10
-URxvt.boldfont: xft:inconsolata:size=10
+URxvt.font: xft:inconsolata:size=12
+URxvt.boldfont: xft:inconsolata:size=12
 URxvt.letterSpace: 0
