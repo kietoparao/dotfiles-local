@@ -2,7 +2,7 @@
 ~/.fehbg &
 
 # Set the default Editor:
-export EDITOR=nano
+export EDITOR=vim
 
 # Special key bindings for MBP (brigthness, volume, etc)
 xbindkeys
