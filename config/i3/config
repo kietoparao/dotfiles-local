@@ -194,8 +194,8 @@ bindsym $mod+F5 exec catfish #search tool
 bindsym $mod+F6 exec xcalib -i -a #invert screen colors
 
 #Makes xcalc stick to the screen even when moving around workspaces (only if it's in floating mode), and starts in floating mode:
-for_window [instance=xcalc] sticky enable
-for_window [instance=xcalc] floating toggle
+#for_window [instance=xcalc] sticky enable
+#for_window [instance=xcalc] floating toggle
 
 # STARTUP APPLICATIONS
 exec dropbox
