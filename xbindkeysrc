@@ -78,7 +78,7 @@
   XF86KbdBrightnessDown
 
 # Start file manager
-"thunar"
+"nemo"
   XF86LaunchA
 "rofi -show run"
   XF86LaunchB
