@@ -206,6 +206,7 @@ for_window [instance=xcalc] floating toggle
 exec dropbox
 exec urxvt
 exec clementine
+exec sudo wpa_gui -t
 
 # Automatically start clients on specific workspaces
 # Assign Firefox to workspace 1
