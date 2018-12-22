@@ -15,3 +15,5 @@ colo seoul256
 " Automatic word wrapping at 80 characters
 " http://vim.wikia.com/wiki/Automatic_word_wrapping
 set tw=79
+set cursorline
+
