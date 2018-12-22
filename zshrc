@@ -122,7 +122,7 @@ alias ptpb="curl -F c=@- https://ptpb.pw/"
 alias zshrc="nano ~/.zshrc && source ~/.zshrc"
 
 #PACMAN SHORTCUTS
-alias pacup="sudo reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syyu" #updates pacman after ranking mirrors
+alias pacup="sudo reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syu" #updates pacman after ranking mirrors
 alias pacinfo="pacman -Si" #shows info about a specific package
 alias pacinst="sudo pacman -S" #installs a package
 alias pacrem="sudo pacman -Rs" #Removes a package and its dependencies which are not required by any other installed package
