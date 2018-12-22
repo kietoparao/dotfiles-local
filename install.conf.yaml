@@ -6,6 +6,7 @@
     ~/.bash_logout: bash_logout
     ~/.gnupg/gpg.conf: gpg.conf
     ~/.vimrc: vimrc
+    ~/.xbindkeysrc: xbindkeysrc
     ~/.Xresources: Xresources
     ~/.xprofile: xprofile
     ~/.zshrc: zshrc
