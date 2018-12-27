@@ -17,3 +17,7 @@ colo seoul256
 set tw=79
 set cursorline
 
+" Center vertically
+" http://vim.wikia.com/wiki/Keep_your_cursor_centered_vertically_on_the_screen
+set scrolloff=999
+
