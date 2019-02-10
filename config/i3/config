@@ -48,7 +48,7 @@ bindsym $mod+d exec rofi -show run
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-bindsym $mod+l focus up
+#bindsym $mod+l focus up
 bindsym $mod+ntilde focus right
 
 # alternatively, you can use the cursor keys:
@@ -204,6 +204,8 @@ exec clementine
 exec redshift-gtk
 # Start i3lock after 2 minutes of inactivity
 #exec xautolock -time 2 -locker 'i3lock -f -i Pictures/Wallpapers/lockscreen/lock1.png' &
+# OR lock screen with $mod + L
+bindsym $mod+l exec "i3lock -f -i $HOME/Pictures/Wallpapers/lockscreen/arch_ascii_blur.png"
 
 # Automatically start clients on specific workspaces
 # Assign Firefox to workspace 1

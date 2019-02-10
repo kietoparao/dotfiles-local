@@ -149,3 +149,4 @@ alias ptpb='curl -F c=@- https://ptpb.pw/'
 # Enable conda commands
 export PATH="$PATH:$HOME/miniconda3/bin"
 . /home/kieto/miniconda3/etc/profile.d/conda.sh
+
