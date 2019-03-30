@@ -131,10 +131,10 @@ alias paclist="sudo pacman -Qqet" #Lists all packages explicitly installed and n
 alias paccache="paccache -r" #remove old package cache files except for the latest three package versions
 alias pacorph="pacman -Qdt" # lists orphaned packages
 alias aurlist="pacman -Qm" #List AUR installed packages
-alias pacedit="sudo nano /etc/pacman.conf" #edit pacman config file to enable/disable repos
+alias pacedit="sudo vim /etc/pacman.conf" #edit pacman config file to enable/disable repos
 
 #FSTAB
-alias fstab="sudo nano /etc/fstab" #edits fstab file
+alias fstab="sudo vim /etc/fstab" #edits fstab file
 
 #PING ONLY THREE TIMES
 alias ping="ping -c 3"
