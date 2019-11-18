@@ -22,4 +22,4 @@ set cursorline
 " Center vertically
 " http://vim.wikia.com/wiki/Keep_your_cursor_centered_vertically_on_the_screen
 set scrolloff=999
-
+au BufReadCmd *.odt,*.ott,*.ods,*.ots,*.odp,*.otp,*.odg,*.otg call zip#Browse(expand(""))
