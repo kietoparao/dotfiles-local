@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/arnau/.oh-my-zsh
+  export ZSH=/home/asellares/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -105,7 +105,7 @@ SAVEHIST=20000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/arnau/.zshrc'
+zstyle :compinstall filename '/home/asellares/.zshrc'
 
 autoload -Uz compinit
 compinit
