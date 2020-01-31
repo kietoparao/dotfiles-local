@@ -203,9 +203,9 @@ for_window [instance=xcalc] sticky enable
 for_window [instance=xcalc] floating toggle
 
 # STARTUP APPLICATIONS
-exec dropbox
+#exec dropbox
 exec urxvt
-exec clementine
+#exec clementine
 exec sudo wpa_gui -t
 
 # Automatically start clients on specific workspaces
