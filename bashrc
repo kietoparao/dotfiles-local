@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=50000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -114,10 +114,10 @@ fi
 
 #----------------------------------------------
 # EDIT AND RELOAD .bashrc CONFIG
-alias bashrc="nano ~/.bashrc && source ~/.bashrc"
+alias bashrc="$EDITOR ~/.bashrc && source ~/.bashrc"
 
 # UPDATE SYSTEM
-alias update="sudo apt-get update && sudo apt-get dist-upgrade"
+alias update="sudo apt update && sudo apt dist-upgrade"
 
 # CHECK RAID STATE
 alias raidstate="cat /proc/mdstat"
@@ -126,10 +126,23 @@ alias raidstate="cat /proc/mdstat"
 alias afterreb="sudo mdadm --assemble --scan && sudo vgchange -a y my_disk"
 
 # CHECK KODI VERSION
-alias kodiversion="dpkg -l | grep mediacenter-osmc | awk '{ print $3 }'"
+alias kodiversion="dpkg -l | grep mediacenter-osmc | awk '{print $3}'"
 
 # APT-GET
-alias inst="sudo apt-get install" 
+alias pinstall="sudo apt install"
+alias psearch='sudo apt search'
+alias pshow='sudo apt show'
+alias premove='sudo apt remove'
+alias pautoremove='sudo apt autoremove'
+alias pupdate='sudo apt update'
+alias pupgrade='sudo apt upgrade'
+alias pfull-upgrade='sudo apt full-upgrade'
+alias psources='sudo apt edit-sources'
 
-#MISC
+# MISC
 alias systate="echo; lsblk ; echo; df -h; echo; cat /proc/mdstat; echo"
+
+# PASTEBIN
+alias ptpb='curl -F c=@- https://ptpb.pw/'
+
+export EDITOR='vim'
