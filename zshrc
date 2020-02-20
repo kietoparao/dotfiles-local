@@ -123,7 +123,7 @@ alias grep='grep --color=auto'
 alias zshrc='$EDITOR ~/.zshrc && source ~/.zshrc'
 
 #PACMAN SHORTCUTS
-alias pacup="sudo reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syu"     # ranks mirrors and updates pacman
+alias pacup="sudo pacman -Syu"
 alias pacinfo="pacman -Si" #shows info about a specific package
 alias pacinst="sudo pacman -S" #installs a package
 alias pacrem="sudo pacman -Rs" #Removes a package and its dependencies which are not required by any other installed package
