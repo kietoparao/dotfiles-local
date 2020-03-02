@@ -205,7 +205,7 @@ for_window [instance=xcalc] floating toggle
 # STARTUP APPLICATIONS
 exec dropbox
 exec urxvt
-exec clementine
+exec redshift-gtk
 exec sudo wpa_gui -t
 
 # Automatically start clients on specific workspaces
