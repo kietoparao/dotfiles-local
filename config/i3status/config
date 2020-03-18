@@ -42,6 +42,9 @@ battery all {
 	hide_seconds = true
 	low_threshold = 10
 	threshold_type = time
+	# Use the last full capacity instead of the design capacity
+	# More info here: https://i3wm.org/i3status/manpage.html#_battery
+	last_full_capacity = true
 }
 
 tztime local {
