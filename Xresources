@@ -44,9 +44,14 @@ URxvt.shading:       20
 !URxvt.boldfont: 7x13bold
 
 ! INCONSOLATA FONT:
-URxvt.font: xft:inconsolata:size=14
-URxvt.boldfont: xft:inconsolata:size=14
-URxvt.letterSpace: 1
+! URxvt.font: xft:inconsolata:size=14
+! URxvt.boldfont: xft:inconsolata:size=14
+! URxvt.letterSpace: 1
+
+! Apple font (Monaco):
+URxvt.font: xft:monaco:size=12
+URxvt.boldfont: xft:monaco:size=12
+URxvt.letterSpace: 0
 
 ! ANONYMOUS FONT:
 !URxvt.font: xft:anonymous pro:size=12
