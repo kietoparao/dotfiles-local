@@ -38,6 +38,7 @@ pacstrap /mnt \
 	acpi \
 	base \
 	dhcpcd \
+	git \
 	grub \
 	htop \
 	intel-ucode \
