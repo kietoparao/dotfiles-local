@@ -14,7 +14,7 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 echo "KEYMAP=es" > /etc/vconsole.conf
 
 echo "########## Making wheel group a sudoer..."
-echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
+echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 echo "########## Setting hostname and hosts file..."
 echo "##### Write your desired hostname:"
