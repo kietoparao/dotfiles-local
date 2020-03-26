@@ -54,7 +54,8 @@ pacstrap /mnt \
 	vi \
 	vim \
 	wpa_supplicant \
-	xkeyboard-config
+	xkeyboard-config \
+	zsh
 echo "########## Generating the fstab file with the mounted partition where arch is installed..."
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "########## Arch-chrooting into new installed system..."
