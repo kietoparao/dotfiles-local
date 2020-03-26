@@ -49,6 +49,7 @@ pacstrap /mnt \
 	man-pages \
 	net-tools \
 	openssh \
+	sudo \
 	texinfo \
 	vi \
 	vim \
