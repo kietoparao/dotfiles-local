@@ -1,7 +1,9 @@
 #!/bin/sh
 set -euo pipefail
 
-dhcpcd
+echo "########## Start and enable dhcpcd at startup..."
+systemctl enable dhcpcd.service
+systemctl start dhcpcd.service
 
 echo "########## Setting time zone and clock..."
 ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime
