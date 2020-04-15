@@ -60,10 +60,12 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   archlinux
+  colored-man-pages
   git
   history
   sudo
   web-search
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -137,11 +139,6 @@ alias fstab="sudo nano /etc/fstab" #edits fstab file
 
 #PING ONLY THREE TIMES
 alias ping="ping -c 3"
-
-#ACCESS OSMC
-alias osmc="ssh osmc@192.168.1.133"
-alias mntosmc="sshfs osmc@192.168.1.133:/ ~/OSMC_remote/" #Mounts remote / into local OSMC folder
-alias umntosmc="fusermount -u ~/OSMC_remote/" #Unmounts remote OSMC folder
 
 # VIDEO CAPTURE (SCREENCASTING)
 # You can change the values -video_size and -framerate to lose some quality on the video file.
