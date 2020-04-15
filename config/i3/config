@@ -201,6 +201,8 @@ bindsym $mod+F6 exec xcalib -i -a #invert screen colors
 exec firefox
 exec urxvt
 exec redshift-gtk
+exec slack
+exec jetbrains-toolbox
 # Start i3lock after 2 minutes of inactivity
 #exec xautolock -time 2 -locker 'i3lock -f -i Pictures/Wallpapers/lockscreen/lock1.png' &
 # OR lock screen with $mod + L
@@ -211,10 +213,11 @@ bindsym $mod+l exec "i3lock -f -i $HOME/Pictures/Wallpapers/lockscreen/arch_asci
 assign [class="Firefox"] $ws1
 # Assign URxvt terminals to workspace 2
 assign [class="URxvt"] $ws2
-# Assign File manager to workspace 3
+# Assign File manager and jetbrains-toolbox to workspace 3
 assign [class="Nemo"] $ws3
-# Assign Clementine to workspace 4
-assign [class="Clementine"] $ws4
+assign [class="jetbrains-toolbox"] $ws3
+# Assign Slack to workspace 4
+assign [class="Slack"] $ws4
 # Assign Gimp to workspace 5
 assign [class="Gimp"] $ws5
 
