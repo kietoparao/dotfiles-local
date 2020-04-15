@@ -144,5 +144,5 @@ alias ping="ping -c 3"
 alias videocapture="ffmpeg -f x11grab -video_size 1280x1024 -framerate 60 -i $DISPLAY -f alsa -i default -c:v ffvhuff -c:a flac test.mkv"
 
 # PASTEBINS
-alias ptpb='curl -F c=@- https://ptpb.pw/'
+alias ix="curl -F 'f:1=<-' ix.io"
 
