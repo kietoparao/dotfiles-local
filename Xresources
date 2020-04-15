@@ -49,8 +49,8 @@ URxvt.shading:       20
 ! URxvt.letterSpace: 1
 
 ! Apple font (Monaco):
-URxvt.font: xft:monaco:size=12
-URxvt.boldfont: xft:monaco:size=12
+URxvt.font: xft:monaco:size=10
+URxvt.boldfont: xft:monaco:size=10
 URxvt.letterSpace: 0
 
 ! ANONYMOUS FONT:
