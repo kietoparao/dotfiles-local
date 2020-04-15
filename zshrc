@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/kieto/.oh-my-zsh
+  export ZSH=/home/asellares/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -108,7 +108,7 @@ setopt appendhistory autocd HIST_IGNORE_SPACE
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/kieto/.zshrc'
+zstyle :compinstall filename '/home/asellares/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -145,8 +145,4 @@ alias videocapture="ffmpeg -f x11grab -video_size 1280x1024 -framerate 60 -i $DI
 
 # PASTEBINS
 alias ptpb='curl -F c=@- https://ptpb.pw/'
-
-# Enable conda commands
-export PATH="$PATH:$HOME/miniconda3/bin"
-. /home/kieto/miniconda3/etc/profile.d/conda.sh
 
