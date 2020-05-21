@@ -203,20 +203,23 @@ for_window [instance=xcalc] sticky enable
 for_window [instance=xcalc] floating toggle
 
 # STARTUP APPLICATIONS
-#exec dropbox
+exec firefox
 exec urxvt
-#exec clementine
+exec redshift-gtk 
 exec sudo wpa_gui -t
+exec slack
+exec jetbrains-toolbox
 
 # Automatically start clients on specific workspaces
 # Assign Firefox to workspace 1
 assign [class="Firefox"] $ws1
 # Assign URxvt terminals to workspace 2
 assign [class="URxvt"] $ws2
-# Assign File manager to workspace 3
+# Assign File manager and jetbrains-toolbox to workspace 3
 assign [class="Nemo"] $ws3
-# Assign Clementine to workspace 4
-assign [class="Clementine"] $ws4
+assign [class="jetbrains-toolbox"] $ws3
+# Assign Slack to workspace 4
+assign [class="Slack"] $ws4
 # Assign Gimp to workspace $w5
 assign [class="Gimp"] $ws5
 
