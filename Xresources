@@ -51,8 +51,8 @@ URxvt.shading:       20
 ! URxvt.letterSpace: 0
 
 ! Apple font (Monaco):
-URxvt.font: xft:monaco:size=9
-URxvt.boldfont: xft:monaco:size=9
+URxvt.font: xft:monaco:size=12
+URxvt.boldfont: xft:monaco:size=12
 URxvt.letterSpace: 0
 
 ! do not scroll with output
