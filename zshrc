@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/asellares/.oh-my-zsh
@@ -152,3 +152,7 @@ alias startwifi="sudo systemctl start wpa_supplicant@wlp3s0.service"
 # NETWORK
 alias ethoff="sudo ip link set enp2s0f0 down"
 alias wifioff="sudo ip link set wlp3s0 down"
+
+# PASTEBINS
+alias ix="curl -F 'f:1=<-' ix.io"
+
