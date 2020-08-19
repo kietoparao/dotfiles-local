@@ -155,3 +155,6 @@ alias startwifi="sudo systemctl start wpa_supplicant@wlp3s0.service"
 # NETWORK
 alias ethoff="sudo ip link set enp2s0f0 down"
 alias wifioff="sudo ip link set wlp3s0 down"
+
+# Pastebin service
+alias ix="curl -F 'f:1=<-' ix.io"
