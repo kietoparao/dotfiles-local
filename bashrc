@@ -143,6 +143,6 @@ alias psources='sudo apt edit-sources'
 alias systate="echo; lsblk ; echo; df -h; echo; cat /proc/mdstat; echo"
 
 # PASTEBIN
-alias ptpb='curl -F c=@- https://ptpb.pw/'
+alias ix="curl -F 'f:1=<-' ix.io"
 
 export EDITOR='vim'
