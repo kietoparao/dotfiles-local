@@ -1,5 +1,6 @@
 #Background
 ~/.fehbg &
 
-# Set the default Editor:
+# Set the default Editor
 export EDITOR=vim
+

@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/kieto/.oh-my-zsh
+export ZSH=/home/kieto/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -60,11 +60,12 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   archlinux
+  colored-man-pages
   git
   history
   pass
   sudo
-  web-search
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -144,9 +145,5 @@ alias ping="ping -c 3"
 alias videocapture="ffmpeg -f x11grab -video_size 1280x1024 -framerate 60 -i $DISPLAY -f alsa -i default -c:v ffvhuff -c:a flac test.mkv"
 
 # PASTEBINS
-alias ptpb='curl -F c=@- https://ptpb.pw/'
-
-# Enable conda commands
-export PATH="$PATH:$HOME/miniconda3/bin"
-. /home/kieto/miniconda3/etc/profile.d/conda.sh
+alias ix='curl -F "f:1=<-" ix.io'
 
