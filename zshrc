@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/arnau/.oh-my-zsh
+export ZSH=/home/arnau/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -60,10 +60,12 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   archlinux
+  colored-man-pages
   git
   history
+  pass
   sudo
-  web-search
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -119,7 +121,7 @@ alias grep="grep --color=auto"
 alias ptpb="curl -F c=@- https://ptpb.pw/"
 
 #EDIT AND RELOAD .zshrc CONFIG
-alias zshrc="nano ~/.zshrc && source ~/.zshrc"
+alias zshrc="vim ~/.zshrc && source ~/.zshrc"
 
 #PACMAN SHORTCUTS
 alias pacup="sudo pacman -Syu"
