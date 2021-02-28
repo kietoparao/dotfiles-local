@@ -187,7 +187,7 @@ bar {
 
 # SHORTCUTS TO APPLICATIONS
 bindsym $mod+F1 exec firefox
-bindsym $mod+F2 exec xcalc
+bindsym $mod+F2 exec flameshot
 bindsym $mod+F3 exec nemo
 bindsym $mod+F4 exec clementine
 bindsym $mod+F5 exec catfish #search tool
@@ -200,7 +200,6 @@ bindsym $mod+F6 exec xcalib -i -a #invert screen colors
 # STARTUP APPLICATIONS
 exec dropbox
 exec urxvt
-exec clementine
 exec redshift-gtk
 
 # Start i3lock after 2 minutes of inactivity
@@ -233,3 +232,4 @@ smart_borders on
 
 # Hide the titlebar of windows:
 new_window pixel 3
+
