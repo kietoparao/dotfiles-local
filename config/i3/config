@@ -192,7 +192,7 @@ bar {
 
 # SHORTCUTS TO APPLICATIONS
 bindsym $mod+F1 exec firefox
-bindsym $mod+F2 exec xcalc
+bindsym $mod+F2 exec flameshot
 bindsym $mod+F3 exec nemo
 bindsym $mod+F4 exec clementine
 bindsym $mod+F5 exec catfish #search tool
@@ -233,3 +233,4 @@ smart_borders on
 
 # Hide the titlebar of windows:
 new_window pixel 3
+
