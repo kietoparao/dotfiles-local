@@ -204,6 +204,7 @@ for_window [instance=xcalc] floating toggle
 
 # STARTUP APPLICATIONS
 exec dropbox
+exec nextcloud
 exec urxvt
 exec redshift-gtk
 exec sudo wpa_gui -t
