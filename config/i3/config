@@ -198,7 +198,7 @@ bindsym $mod+F6 exec xcalib -i -a #invert screen colors
 #for_window [instance=xcalc] floating toggle
 
 # STARTUP APPLICATIONS
-exec dropbox
+exec nextcloud
 exec urxvt
 exec redshift-gtk
 
