@@ -147,3 +147,8 @@ alias videocapture="ffmpeg -f x11grab -video_size 1280x1024 -framerate 60 -i $DI
 # PASTEBINS
 alias ix='curl -F "f:1=<-" ix.io'
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
