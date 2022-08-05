@@ -1,6 +1,6 @@
 ! REFRESH TERMINAL CONFIG WITH "xrdb ~/.Xresources"
 
-# Set DPI to 150% (162dpi) for a 27-inch Dell monitor (2560x1440 pixels, with 108dpi as normal)
+! Set DPI to 150% (162dpi) for a 27-inch Dell monitor (2560x1440 pixels, with 108dpi as normal)
 Xft.dpi: 162
 
 ! Tango color palette
@@ -52,8 +52,8 @@ URxvt.shading:       20
 ! URxvt.letterSpace: 1
 
 ! Apple font (Monaco):
-URxvt.font: xft:monaco:size=12
-URxvt.boldfont: xft:monaco:size=12
+URxvt.font: xft:monaco:size=15
+URxvt.boldfont: xft:monaco:size=15
 URxvt.letterSpace: 0
 
 ! ANONYMOUS FONT:
@@ -73,7 +73,7 @@ URxvt*scrollWithBuffer: true
 ! scroll back to the bottom on keypress
 URxvt*scrollTtyKeypress: true
 
-# https://wiki.archlinux.org/index.php/Font_configuration#Applications_without_fontconfig_support
+! https://wiki.archlinux.org/index.php/Font_configuration#Applications_without_fontconfig_support
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintslight
