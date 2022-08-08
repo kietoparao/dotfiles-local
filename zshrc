@@ -160,3 +160,4 @@ alias wifioff="sudo ip link set wlp3s0 down"
 
 # Pastebin service
 alias ix="curl -F 'f:1=<-' ix.io"
+
