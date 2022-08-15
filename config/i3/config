@@ -30,7 +30,7 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -204,15 +204,15 @@ for_window [instance=xcalc] floating toggle
 
 # STARTUP APPLICATIONS
 exec nextcloud
-exec urxvt
+exec alacritty
 exec redshift-gtk
 exec sudo wpa_gui -t
 
 # Automatically start clients on specific workspaces
 # Assign Firefox to workspace 1
 assign [class="Firefox"] $ws1
-# Assign URxvt terminals to workspace 2
-assign [class="URxvt"] $ws2
+# Assign Alacritty terminals to workspace 2
+assign [class="Alacritty"] $ws2
 # Assign File manager to workspace 3
 assign [class="Nemo"] $ws3
 # Assign Clementine to workspace 4
