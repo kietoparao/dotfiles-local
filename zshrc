@@ -155,3 +155,6 @@ eval "$(pyenv init -)"
 # anaconda setup instructions
 [ -f /opt/anaconda/etc/profile.d/conda.sh ] && source /opt/anaconda/etc/profile.d/conda.sh
 
+# Avoid weird terminal errors on older machines
+alias ssh="TERM=xterm-256color $(which ssh)"
+
