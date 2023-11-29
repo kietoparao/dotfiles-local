@@ -16,4 +16,7 @@
     ~/.config/i3status:
         path: config/i3status/
         create: true
+    ~/.config/rofi/config.rasi:
+        path: config/rofi/config.rasi
+        create: true
 
